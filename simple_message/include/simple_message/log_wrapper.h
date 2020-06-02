@@ -33,7 +33,7 @@
 #define LOG_WRAPPER_H_
 
 #ifdef ROS
-#include "ros/ros.h"
+#include <rcutils/logging_macros.h>
 #endif
 
 #ifdef MOTOPLUS
@@ -61,22 +61,22 @@ namespace log_wrapper
 // debug filtering tools that allow the communications messages
 // to be easily removed from the logs
 #define LOG_COMM(format, ...)  \
-  ROS_DEBUG(format, ##__VA_ARGS__)
+  RCUTILS_LOG_DEBUG(format, ##__VA_ARGS__)
   
 #define LOG_DEBUG(format, ...)  \
-  ROS_DEBUG(format, ##__VA_ARGS__)
+  RCUTILS_LOG_DEBUG(format, ##__VA_ARGS__)
 
 #define LOG_INFO(format, ...)  \
-  ROS_INFO(format, ##__VA_ARGS__)
+  RCUTILS_LOG_INFO(format, ##__VA_ARGS__)
 
 #define LOG_WARN(format, ...)  \
-  ROS_WARN(format, ##__VA_ARGS__)
+  RCUTILS_LOG_WARN(format, ##__VA_ARGS__)
 
 #define LOG_ERROR(format, ...)  \
-  ROS_ERROR(format, ##__VA_ARGS__)
+  RCUTILS_LOG_ERROR(format, ##__VA_ARGS__)
 
 #define LOG_FATAL(format, ...)  \
-  ROS_FATAL(FATAL, ##__VA_ARGS__)
+  RCUTILS_LOG_FATAL(FATAL, ##__VA_ARGS__)
 
 #elif defined(STDIOLOG)
 

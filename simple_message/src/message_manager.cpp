@@ -39,10 +39,10 @@
 #endif
 
 #ifdef ROS
-#include "ros/ros.h"
-#else
-#include "unistd.h"
+#include "rclcpp/rclcpp.hpp"
 #endif
+
+#include "unistd.h"
 
 using namespace industrial::smpl_msg_connection;
 using namespace industrial::message_handler;
@@ -185,7 +185,7 @@ void MessageManager::spin()
 {
   LOG_INFO("Entering message manager spin loop");
 #ifdef ROS
-  while (ros::ok())
+  while(rclcpp::ok())
 #else
   while (true)
 #endif
