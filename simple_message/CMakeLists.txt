@@ -91,6 +91,7 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+ament_export_dependencies(rcutils)
 ament_export_include_directories(include)
 ament_export_interfaces(export_${PROJECT_NAME})
 ament_export_libraries(simple_message)
